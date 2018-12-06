@@ -75,5 +75,12 @@
             </plugin>
         </plugins>
     </build>
-
+         
+    <scm>
+        <url>scm:git:git@github.com:OpenHFT/binance-api-client.git</url>
+        <connection>scm:git:git@github.com:OpenHFT/binance-api-client.git</connection>
+        <developerConnection>scm:git:git@github.com:OpenHFT/binance-api-client.git
+        </developerConnection>
+        <tag>master</tag>
+    </scm>
 </project>
