@@ -91,9 +91,9 @@
     </build>
          
     <scm>
-        <url>scm:git:git@github.com:OpenHFT/Binance-Java-Api.git</url>
-        <connection>scm:git:git@github.com:OpenHFT/Binance-Java-Api.git</connection>
-        <developerConnection>scm:git@github.com:OpenHFT/Binance-Java-Api.git
+        <url>scm:git:git@github.com:OpenHFT/Binance-Api-Client.git</url>
+        <connection>scm:git:git@github.com:OpenHFT/Binance-Api-Client.git</connection>
+        <developerConnection>scm:git@github.com:OpenHFT/Binance-Api-Client.git
         </developerConnection>
         <tag>master</tag>
     </scm>
