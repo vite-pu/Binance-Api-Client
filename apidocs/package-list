@@ -1,0 +1,11 @@
+com.binance.api.client
+com.binance.api.client.constant
+com.binance.api.client.domain
+com.binance.api.client.domain.account
+com.binance.api.client.domain.account.request
+com.binance.api.client.domain.event
+com.binance.api.client.domain.general
+com.binance.api.client.domain.market
+com.binance.api.client.exception
+com.binance.api.client.impl
+com.binance.api.client.security
