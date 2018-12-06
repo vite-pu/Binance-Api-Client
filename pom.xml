@@ -9,6 +9,10 @@
         <relativePath/>
     </parent>
 
+    <properties>
+        <additionalparam>-Xdoclint:none</additionalparam>
+    </properties>
+
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>net.openhft.com.binance.api</groupId>
