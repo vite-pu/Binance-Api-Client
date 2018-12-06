@@ -74,7 +74,7 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <plugin>
+            <!--<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-scm-publish-plugin</artifactId>
                 <configuration>
@@ -87,7 +87,7 @@
                     <pubScmUrl>scm:git:git@github.com:OpenHFT/Binance-Api-Client</pubScmUrl>
                     <scmBranch>gh-pages</scmBranch>
                 </configuration>
-            </plugin>
+            </plugin>-->
 
         </plugins>
     </build>
