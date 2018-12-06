@@ -9,10 +9,6 @@
         <relativePath/>
     </parent>
 
-    <properties>
-        <additionalparam>-Xdoclint:none</additionalparam>
-    </properties>
-
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>net.openhft.com.binance.api</groupId>
@@ -21,6 +17,7 @@
 
     <properties>
         <com.squareup.retrofit2.version>2.4.0</com.squareup.retrofit2.version>
+        <additionalparam>-Xdoclint:none</additionalparam>
     </properties>
 
          
