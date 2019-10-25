@@ -10,17 +10,19 @@ public class BinanceApiConstants {
   /**
    * REST API base URL.
    */
-  public static final String API_BASE_URL = "https://api.binance.com";
-
+//  public static final String API_BASE_URL = "https://api.binance.com";
+  public static final String API_BASE_URL = "http://18.136.19.192:8081/baapi/";
   /**
    * Streaming API base URL.
    */
-  public static final String WS_API_BASE_URL = "wss://stream.binance.com:9443/ws";
+//  public static final String WS_API_BASE_URL = "wss://stream.binance.com:9443/ws";
+  public static final String WS_API_BASE_URL = "ws://18.136.19.192:8081/ba/ws";
 
   /**
    * Asset info base URL.
    */
-  public static final String ASSET_INFO_API_BASE_URL = "https://www.binance.com/";
+//  public static final String ASSET_INFO_API_BASE_URL = "https://www.binance.com/";
+  public static final String ASSET_INFO_API_BASE_URL = "http://18.136.19.192:8081/bacom/";
 
   /**
    * HTTP Header to be used for API-KEY authentication.
