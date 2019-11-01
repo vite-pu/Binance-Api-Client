@@ -1,11 +1,22 @@
 package com.binance.api.client.constant;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * Constants used throughout Binance's API.
  */
 public class BinanceApiConstants {
+
+  private static String getWsUri() {
+      String url1 = System.getProperty("bnWsUrl");
+      System.out.println(url1);
+      if (StringUtils.isEmpty(url1)) {
+          return "wss://stream.binance.com:9443/ws";
+      } else {
+          return url1;
+      }
+  }
 
   /**
    * REST API base URL.
@@ -16,7 +27,8 @@ public class BinanceApiConstants {
    * Streaming API base URL.
    */
 //  public static final String WS_API_BASE_URL = "wss://stream.binance.com:9443/ws";
-  public static final String WS_API_BASE_URL = "ws://18.136.19.192:8081/ba/ws";
+//  public static final String WS_API_BASE_URL = "ws://18.136.19.192:8081/ba/ws";
+    public static final String WS_API_BASE_URL = getWsUri();
 
   /**
    * Asset info base URL.
