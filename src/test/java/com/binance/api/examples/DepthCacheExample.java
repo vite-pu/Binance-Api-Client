@@ -60,13 +60,20 @@ public class DepthCacheExample {
 
   private void initialize() {
     // 1. Subscribe to depth events and cache any events that are received.
-    final List<DepthEvent> pendingDeltas = startDepthEventStreaming();
+//    final List<DepthEvent> pendingDeltas = startDepthEventStreaming();
+//
+//    // 2. Get a snapshot from the rest endpoint and use it to build your initial depth cache.
+//    initializeDepthCache();
+//
+//    // 3. & 4. handled in here.
+//    applyPendingDeltas(pendingDeltas);
+    sync();
+  }
 
-    // 2. Get a snapshot from the rest endpoint and use it to build your initial depth cache.
-    initializeDepthCache();
-
-    // 3. & 4. handled in here.
-    applyPendingDeltas(pendingDeltas);
+  public void sync() {
+    this.wsClient.onDepthEvent5(symbol.toLowerCase(), depthEvent5 -> {
+      System.out.println(symbol + depthEvent5.toString());
+    });
   }
 
   /**
@@ -209,6 +216,7 @@ public class DepthCacheExample {
 
   public static void main(String[] args) {
     new DepthCacheExample("BTCUSDT");
+    new DepthCacheExample("ETHUSDT");
   }
 
   private final class WsCallback implements BinanceApiCallback<DepthEvent> {

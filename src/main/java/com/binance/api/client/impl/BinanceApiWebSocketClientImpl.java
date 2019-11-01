@@ -3,11 +3,7 @@ package com.binance.api.client.impl;
 import com.binance.api.client.BinanceApiCallback;
 import com.binance.api.client.BinanceApiWebSocketClient;
 import com.binance.api.client.constant.BinanceApiConstants;
-import com.binance.api.client.domain.event.AggTradeEvent;
-import com.binance.api.client.domain.event.AllMarketTickersEvent;
-import com.binance.api.client.domain.event.CandlestickEvent;
-import com.binance.api.client.domain.event.DepthEvent;
-import com.binance.api.client.domain.event.UserDataUpdateEvent;
+import com.binance.api.client.domain.event.*;
 import com.binance.api.client.domain.market.CandlestickInterval;
 import com.fasterxml.jackson.core.type.TypeReference;
 
@@ -38,6 +34,16 @@ public class BinanceApiWebSocketClientImpl implements BinanceApiWebSocketClient,
                 .map(s -> String.format("%s@depth", s))
                 .collect(Collectors.joining("/"));
         return createNewWebSocket(channel, new BinanceApiWebSocketListener<>(callback, DepthEvent.class));
+    }
+
+    @Override
+    public Closeable onDepthEvent5(String symbols, BinanceApiCallback<DepthEvent5> callback) {
+        final String channel = Arrays.stream(symbols.split(","))
+                .map(String::trim)
+                .map(s -> String.format("%s@depth5", s))
+                .collect(Collectors.joining("/"));
+        System.out.println(channel);
+        return createNewWebSocket(channel, new BinanceApiWebSocketListener<>(callback, DepthEvent5.class));
     }
 
     @Override
@@ -74,6 +80,7 @@ public class BinanceApiWebSocketClientImpl implements BinanceApiWebSocketClient,
 
     private Closeable createNewWebSocket(String channel, BinanceApiWebSocketListener<?> listener) {
         String streamingUrl = String.format("%s/%s", BinanceApiConstants.WS_API_BASE_URL, channel);
+        System.out.println(streamingUrl);
         Request request = new Request.Builder().url(streamingUrl).build();
         final WebSocket webSocket = client.newWebSocket(request, listener);
         return () -> {
