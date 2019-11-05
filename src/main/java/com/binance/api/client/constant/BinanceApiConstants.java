@@ -18,23 +18,31 @@ public class BinanceApiConstants {
       }
   }
 
+  private static String getRestUrl() {
+      String url = System.getProperty("bnRestUrl");
+      if (StringUtils.isEmpty(url)) {
+          return "https://api.binance.com";
+      } else {
+          return url;
+      }
+  }
+
   /**
    * REST API base URL.
    */
 //  public static final String API_BASE_URL = "https://api.binance.com";
-  public static final String API_BASE_URL = "http://18.136.19.192:8081/baapi/";
+  public static final String API_BASE_URL = getRestUrl();
   /**
    * Streaming API base URL.
    */
 //  public static final String WS_API_BASE_URL = "wss://stream.binance.com:9443/ws";
-//  public static final String WS_API_BASE_URL = "ws://18.136.19.192:8081/ba/ws";
     public static final String WS_API_BASE_URL = getWsUri();
 
   /**
    * Asset info base URL.
    */
 //  public static final String ASSET_INFO_API_BASE_URL = "https://www.binance.com/";
-  public static final String ASSET_INFO_API_BASE_URL = "http://18.136.19.192:8081/bacom/";
+  public static final String ASSET_INFO_API_BASE_URL = getRestUrl();
 
   /**
    * HTTP Header to be used for API-KEY authentication.
