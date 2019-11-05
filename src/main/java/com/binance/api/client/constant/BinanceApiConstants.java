@@ -27,6 +27,15 @@ public class BinanceApiConstants {
       }
   }
 
+  private static String getBaseUrl() {
+      String url = System.getProperty("bnBaseUrl");
+      if (StringUtils.isEmpty(url)) {
+          return "https://www.binance.com";
+      } else {
+          return url;
+      }
+  }
+
   /**
    * REST API base URL.
    */
@@ -42,7 +51,7 @@ public class BinanceApiConstants {
    * Asset info base URL.
    */
 //  public static final String ASSET_INFO_API_BASE_URL = "https://www.binance.com/";
-  public static final String ASSET_INFO_API_BASE_URL = getRestUrl();
+  public static final String ASSET_INFO_API_BASE_URL = getBaseUrl();
 
   /**
    * HTTP Header to be used for API-KEY authentication.
