@@ -25,6 +25,54 @@ public class MarketTickersEvent {
     @JsonProperty("u")
     private long lastUpdateId;
 
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol( String symbol ) {
+        this.symbol = symbol;
+    }
+
+    public String getBestAskPrice() {
+        return bestAskPrice;
+    }
+
+    public void setBestAskPrice( String bestAskPrice ) {
+        this.bestAskPrice = bestAskPrice;
+    }
+
+    public String getBestAskQuantity() {
+        return bestAskQuantity;
+    }
+
+    public void setBestAskQuantity( String bestAskQuantity ) {
+        this.bestAskQuantity = bestAskQuantity;
+    }
+
+    public String getBestBidPrice() {
+        return bestBidPrice;
+    }
+
+    public void setBestBidPrice( String bestBidPrice ) {
+        this.bestBidPrice = bestBidPrice;
+    }
+
+    public String getBestBidQuantity() {
+        return bestBidQuantity;
+    }
+
+    public void setBestBidQuantity( String bestBidQuantity ) {
+        this.bestBidQuantity = bestBidQuantity;
+    }
+
+    public long getLastUpdateId() {
+        return lastUpdateId;
+    }
+
+    public void setLastUpdateId( long lastUpdateId ) {
+        this.lastUpdateId = lastUpdateId;
+    }
+
     @Override
     public String toString() {
         return new ToStringBuilder(this, BinanceApiConstants.TO_STRING_BUILDER_STYLE)
