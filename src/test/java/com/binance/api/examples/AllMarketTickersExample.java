@@ -14,8 +14,12 @@ public class AllMarketTickersExample {
     BinanceApiClientFactory factory = BinanceApiClientFactory.newInstance();
     BinanceApiWebSocketClient client = factory.newWebSocketClient();
 
-    client.onAllMarketTickersEvent(event -> {
-      System.out.println(event);
+//    client.onAllMarketTickersEvent(event -> {
+//      System.out.println(event);
+//    });
+
+    client.onMarketTickersEvent("btcusdt,ethusdt", event -> {
+      System.out.println(event.toString());
     });
   }
 }
